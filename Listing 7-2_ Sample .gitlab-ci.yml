@@ -1,0 +1,23 @@
+# *Listing 7-2: Sample .gitlab-ci.yml file for running tests*
+
+image: "myCompany/salesforceDXimage:latest"
+
+stages:
+  - build
+  - test
+
+create_test_org:
+  stage: build
+  script:
+    - sfdx force:org:create -a testOrg --setdefaultusername --wait 10
+    - sfdx force:source:push
+  only:
+    - master
+
+run_tests:
+  stage: test
+  image: ruby:latest
+  script:
+    - ruby -I test test/path/to/the_test.rb
+  only:
+    - master

@@ -1,0 +1,39 @@
+# *Listing 7-5: Sample .gitlab-ci.yml file using YAML anchors*
+
+
+image: myCompany/salesforceDXimage:latest
+
+stages:
+  - install
+  - deploy
+  - Test
+
+.fake_job:
+  <<: &update_packages
+    stage: install
+    script:
+      - ./scripts/getInstalledPackages.sh $TARGET_ORG
+      - ./scripts/updatePackages.sh $TARGET_ORG
+
+update_packages_in_SIT:
+  <<: *update_packages
+  variables:
+    - TARGET_ORG: SIT
+  only:
+    - /^SIT/
+
+update_packages_in_staging:
+  <<: *update_packages
+  variables:
+    - TARGET_ORG: staging
+  only:
+    - master
+
+update_packages_in_production:
+  <<: *update_packages
+  variables:
+    - TARGET_ORG: production
+  only:
+   - tags
+   - /^v[0-9.]+$/
+  when: manual

@@ -1,0 +1,15 @@
+# *Listing 6-3:Sample `.forceignore` File*
+
+
+# Specify a relative path to a directory from the project root
+helloWorld/main/default/classes
+
+# Specify a wildcard directory - any directory named “classes” is excluded
+classes
+
+# Specify file extensions
+.cls
+.pdf
+
+# Specify a specific file
+helloWorld/main/default/HelloWorld.cls

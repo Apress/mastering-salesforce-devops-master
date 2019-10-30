@@ -1,0 +1,13 @@
+// *Listing 9-4: A simple Gradle script that imports existing Ant targets*
+
+
+logging.level = LogLevel.INFO
+ant.importBuild 'ant/build.xml'
+
+task deploy2QA (dependsOn: ['deployAndDestroyQA', 'deployProjectToQA'])
+
+task deploy2Full (dependsOn: ['deployAndDestroyFull', 'deployProjectToFull'])
+
+task deploy2Training (dependsOn: ['deployAndDestroyTraining', 'deployProjectToTraining'])
+
+task deploy2Prod (dependsOn: ['deployAndDestroyProd', 'deployProjectToProd'])

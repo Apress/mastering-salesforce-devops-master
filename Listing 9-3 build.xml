@@ -1,0 +1,29 @@
+<!-- *Listing 9-3: A simple Ant build.xml configuration file using the Ant Migration Tool* -->
+
+
+<project name="AntClassProject" basedir="." 
+    xmlns:sf="antlib:com.salesforce">
+    <!-- this taskdef helps locate the ant-salesforce jar in the project -->
+    <taskdef resource="com/salesforce/antlib.xml" classPath="lib/ant-salesforce_34.jar" uri="antlib:com.salesforce"/>
+
+    <property file="build.properties" />
+
+    <tstamp>
+        <format property="date" pattern="yyyy-MM-dd" />
+        <format property="dateTime" pattern="yyyy-MM-dd_kk-mm-ss" />
+    </tstamp>
+    <property name="projectSource" value='../src' />
+    <property name="entireProject" value="${projectSource}/package.xml" />
+    <property name="sourceDev" value='${basedir}/source/dev' />
+    <property name="logFile" value="${basedir}/log/${dateTime}.txt" />
+
+    <target name="retrieveDev">
+        <mkdir dir="log" />
+        <record name="${logFile}" action="start"/>
+        <echo>Retrieving from Dev...</echo>
+        <delete dir="${sourceDev}" />
+        <mkdir dir="${sourceDev}" />
+        <sf:retrieve username="${dev.username}" password="${dev.password}" serverurl="${dev.serverurl}" retrieveTarget="${sourceDev}" unpackaged="${entireProject}" pollWaitMillis="10000" maxPoll="5000" />
+        <record name="${logFile}" action="stop"/>
+    </target>
+</project>

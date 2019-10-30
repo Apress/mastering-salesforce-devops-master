@@ -1,0 +1,8 @@
+// *Listing 9-7: JQ allows you to go further by querying the results*
+
+// $ sfdx force:config:list --json | jq '.result[0]'
+{
+  "key": "defaultdevhubusername",
+  "location": "Local",
+  "value": "MyDevHub"
+}

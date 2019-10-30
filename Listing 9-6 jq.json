@@ -1,0 +1,18 @@
+// *Listing 9-6: Simply piping sfdx JSON output into jq provides a nicely formatted output*
+
+// $ sfdx force:config:list --json | jq
+{
+  "status": 0,
+  "result": [
+    {
+      "key": "defaultdevhubusername",
+      "location": "Local",
+      "value": "MyDevHub"
+    },
+    {
+      "key": "defaultusername",
+      "location": "Local",
+      "value": "test-v1asf98g72x5@example.com"
+    }
+  ]
+}

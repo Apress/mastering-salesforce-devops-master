@@ -1,0 +1,13 @@
+# *Listing 7-1: myCompany/salesforceDXimage - a sample Dockerfile for Salesforce DX*
+
+
+FROM node:8
+
+#Installing Salesforce DX CLI
+RUN yarn global add sfdx-cli
+RUN sfdx --version
+
+#SFDX environment
+ENV SFDX_AUTOUPDATE_DISABLE true
+ENV SFDX_USE_GENERIC_UNIX_KEYCHAIN true
+ENV SFDX_DOMAIN_RETRY 300

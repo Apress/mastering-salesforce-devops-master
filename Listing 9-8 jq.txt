@@ -1,0 +1,7 @@
+*Listing 9-8: JQ provides many sophisticated filtering options*
+
+
+$ sfdx force:config:list --json | 
+    jq '.result[] | select(.key == "defaultdevhubusername").value'
+
+"MyDevHub"

@@ -1,0 +1,32 @@
+// *Listing 5-5: An `sfdx-project.json` file showing package dependencies.*
+
+{
+  "packageDirectories": [
+    {
+      "path": "force-app/healthcase",
+      "package": "healthcare",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "dependencies": [
+        {
+          "package": "industry@0.1.0.12546"
+        },
+        {
+          "package": "schema",
+          "versionNumber": "0.1.0.LATEST"
+        }
+      ]
+    },
+    {
+      "path": "force-app/schema",
+      "package": "schema",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": true
+    }
+  ],
+  "packageAliases": {
+    "industry@0.1.0.12546": "04t1T000000703YQAQ",
+    "schema": "0Ho6F000000XZIpSAO"
+  }
+}

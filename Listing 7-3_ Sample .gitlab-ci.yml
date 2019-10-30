@@ -1,0 +1,29 @@
+# *Listing 7-3: Sample .gitlab-ci.yml file for managing org-level metadata publishing*
+
+image: myCompany/salesforceDXimage:latest
+
+stages:
+  - deploy
+
+deploy_to_SIT:
+  stage: deploy
+  script:
+    - echo Hello World
+  only:
+    - /^SIT/
+
+deploy_to_staging:
+  stage: deploy
+  script:
+    - echo Hello World
+  only:
+    - master
+
+deploy_to_production:
+  stage: deploy
+  script:
+    - echo Hello World
+  only:
+    - tags
+    - /^v[0-9.]+$/
+  when: manual

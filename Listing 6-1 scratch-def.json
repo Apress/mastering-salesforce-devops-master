@@ -1,0 +1,21 @@
+# *Listing 6-1: Sample Scratch Org Definition File*
+
+
+{
+  "orgName": "Acme",
+  "edition": "Enterprise",
+  "features": ["Communities", "ServiceCloud", "Chatbot"],
+  "settings": {
+      "orgPreferenceSettings": {
+          "networksEnabled": true,
+          "s1DesktopEnabled": true,
+          "s1EncryptedStoragePref2": false
+      },
+      "omniChannelSettings": {
+          "enableOmniChannel": true
+      },
+      "caseSettings": {
+          "systemUserEmail": "support@acme.com"
+      }
+  }
+}
