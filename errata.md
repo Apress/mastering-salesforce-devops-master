@@ -33,9 +33,10 @@ On **page 314** Change 'ApexPMD' to 'PMD':
 ***
 
 On **page 315** Change 'ApexPMD' to 'Apex PMD':
- 
+Although the underlying engine is just called 'PMD', the VS Code extension by Chuck Jonas is called "Apex PMD". Therefore on this page, the text should read:
+
 "PMD can be run from the command line, or from within the **Apex PMD** extension for VS Code, and its results output in multiple formats such as CSV and HTML."
 
-*Although the underlying engine is just called 'PMD', the VS Code extension by Chuck Jonas is called "Apex PMD"*
+
 ***
 
