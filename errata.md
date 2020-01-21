@@ -40,3 +40,9 @@ Although the underlying engine is just called 'PMD', the VS Code extension by Ch
 
 ***
 
+Not an erratum, but I just learned about Browserforce by Matias Rolke.
+The tool automates many org setup tasks that can only be done through the UI.
+It maintains state to ensure that you don't perform an action twice.
+Lots of other cool capabilities as well: https://github.com/amtrack/sfdx-browserforce-plugin
+
+***
